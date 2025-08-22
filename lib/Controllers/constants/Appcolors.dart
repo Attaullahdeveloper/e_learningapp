@@ -9,5 +9,6 @@ class Appcolors{
   static Color whitecolor=Color(0xffFFFFFF);
   static Color subtextcolor=Color(0xff545454);
   static Color maintextcolor=Color(0xff202244);
+  static Color smalllistcolor=Color(0xffD5E2F5);
 
 }
