@@ -28,7 +28,7 @@ class Getstartbutton extends StatelessWidget {
       child: Row(
       //  mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(width: 25,),
+          SizedBox(width: 20,),
           Text1w(text: text, fontsize: 14, color: Appcolors.whitecolor,fontWeight: FontWeight.w600,),
         Spacer(),
         Container(
@@ -41,7 +41,7 @@ class Getstartbutton extends StatelessWidget {
           child: Icon(Icons.arrow_forward,color: Appcolors.bluemain,),
         ),
       ),
-          SizedBox(width: 7,),
+          SizedBox(width: 5,),
         ],
       ),
     );

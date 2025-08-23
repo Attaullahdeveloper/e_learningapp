@@ -5,6 +5,8 @@ import 'package:e_learningapp/Controllers/Widgets/Text2_widget.dart';
 import 'package:e_learningapp/Controllers/constants/Appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../Controllers/Widgets/Buttons/Getstartbutton.dart';
 class OnboardingScreen extends StatelessWidget {
    OnboardingScreen({super.key});
 Maincontroller maincontroller=Get.put(Maincontroller());
@@ -37,11 +39,30 @@ Maincontroller maincontroller=Get.put(Maincontroller());
                 ),)
                ),
 
-              SizedBox(width: 170,),
-              InkWell(
-                  onTap: maincontroller.nextPage,
-                  child: Nextbutton()),
+              Spacer(),
+             Obx(()=> InkWell( onTap: maincontroller.nextPage,
+                 child: maincontroller.currentindex.value==2?InkWell(
+                     onTap: (){
 
+                     },
+                     child: Getstartbutton(text: 'Get Started')):Nextbutton()),),
+              // 🔥 Ternary: if last page → Get Started, else Next
+             // Obx(()=> InkWell(
+             //    onTap: ()
+             //    {
+             //      if (maincontroller.currentindex.value == 2) {
+             //        // ✅ Last page action
+             //        print("Get Started pressed");
+             //        // Example: Get.offAll(() => LoginScreen());
+             //      } else {
+             //        maincontroller.nextPage();
+             //      }
+             //    },
+             //    child: maincontroller.currentindex.value == 2
+             //        ? Getstartbutton(text: "Get Started")
+             //        : Nextbutton(),
+             //  )),
+               SizedBox(width: 20,),
             ],
           ),
         ),
@@ -69,7 +90,6 @@ Maincontroller maincontroller=Get.put(Maincontroller());
 
               Column(
                 children: [
-
                   SizedBox(height: 460,),
                   Text1w(text: 'Online Learning', fontsize: 20, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,),
                   SizedBox(height: 5,),
@@ -79,17 +99,27 @@ Maincontroller maincontroller=Get.put(Maincontroller());
               ),
               Column(
                 children: [
-                  Text('kdjfljalkdfjlkd'),
+
+                  SizedBox(height: 460,),
+                  Text1w(text: 'Learn form Anytime', fontsize: 20, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,),
+                  SizedBox(height: 5,),
+                  Text2w(text: 'Booked or Same the Lectures for Future', fontsize: 11, color: Appcolors.subtextcolor,fontWeight: FontWeight.w700,),
                 ],
               ),
               Column(
                 children: [
-                  Text('kdjfljalkdfjlkd'),
+
+                  SizedBox(height: 460,),
+                  Text1w(text: 'Get Online Certificate', fontsize: 20, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,),
+                  SizedBox(height: 5,),
+                  Text2w(text: 'Analyse you score and Track you results', fontsize: 11, color: Appcolors.subtextcolor,fontWeight: FontWeight.w700,),
                 ],
               ),
+
+
             ],
           ),
-//skit button--------------------------------------------------------------
+//--------------------------------------------------skit button--------------------------------------------------------------
 
           Padding(
             padding: const EdgeInsets.only(left: 280,top: 70),
