@@ -12,5 +12,8 @@ class Appimages{
   static String proflogo='assets/proflogo.png';
 
   static String sucesslogo='assets/successlogo.png';
+  static String appleicon='assets/appleicon.png';
+  static String googleicon='assets/googleicon.png';
+  static String googlelogo='assets/googlelogo.png';
 
 }
