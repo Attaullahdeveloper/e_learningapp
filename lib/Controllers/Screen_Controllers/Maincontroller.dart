@@ -17,4 +17,8 @@ class Maincontroller extends GetxController {
   void onPageChanged(int index) {
     currentindex.value = index;
   }
+  var isChecked=false.obs;
+  void toggleCheck(){
+     isChecked.value=!isChecked.value;
+  }
 }

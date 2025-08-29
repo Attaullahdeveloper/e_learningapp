@@ -6,4 +6,6 @@ class Appicons{
   static String googleicon='assets/googleicon.png';
   static String arowleft='assets/arrowleft.png';
   static String arrowdown='assets/arrowdown.png';
+  static String passicon='assets/passicon.png;';
+  static String emailicon='assets/emailicon.png;';
 }

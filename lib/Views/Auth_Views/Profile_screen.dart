@@ -1,0 +1,67 @@
+import 'package:e_learningapp/Controllers/Appassets/Appicons.dart';
+import 'package:e_learningapp/Controllers/Widgets/Buttons/Mainbutton.dart';
+import 'package:e_learningapp/Controllers/Widgets/Buttons/datatextfield.dart';
+import 'package:e_learningapp/Controllers/Widgets/Phonetextdiled.dart';
+import 'package:e_learningapp/Controllers/Widgets/Text1w.dart';
+import 'package:flutter/material.dart';
+
+import '../../Controllers/Appassets/Appimages.dart';
+import '../../Controllers/Widgets/Textfield_widget.dart';
+import '../../Controllers/constants/Appcolors.dart';
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Appcolors.backgroundcolor,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 60,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: [
+                  ImageIcon(AssetImage(Appicons.arowleft)),
+                  SizedBox(width: 10,),
+                  Text1w(text: 'Fill Your Profile', fontsize:18, color:Appcolors.blackcolor,fontWeight: FontWeight.w600,),
+                ],
+              ),
+            ),
+            SizedBox(height: 30,),
+            Align(
+                alignment: Alignment.center,
+                child: Image.asset(Appimages.proflogo,height: 100,width: 100,)),
+            SizedBox(height: 30,),
+            Align(
+                alignment: Alignment.center,
+                child: Datatextfield(hinttext: 'Full Name')),
+            SizedBox(height: 20,),
+            Align(
+                alignment: Alignment.center,
+                child: Datatextfield(hinttext: 'Nick Name')),
+            SizedBox(height: 20,),
+            Align(
+              alignment: Alignment.center,
+              child: TextfieldWidget(hintText: 'Date of Birth',prefixIcon: ImageIcon(AssetImage(Appicons.calender)),),
+            ),
+            SizedBox(height: 20,),
+            Align(
+              alignment: Alignment.center,
+              child: TextfieldWidget(hintText: 'Email',prefixIcon: Image.asset(Appimages.email),),
+            ),
+            SizedBox(height: 20,),
+            Align(
+              alignment: Alignment.center,
+              child: PhoneTextField(),
+            ),
+            SizedBox(height: 100,),
+            Mainbutton(text: 'Continue',textPadding: EdgeInsets.only(left: 110),),
+
+          ],
+        ),
+      ),
+    );
+  }
+}

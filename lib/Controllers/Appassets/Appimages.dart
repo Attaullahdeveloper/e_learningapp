@@ -15,5 +15,10 @@ class Appimages{
   static String appleicon='assets/appleicon.png';
   static String googleicon='assets/googleicon.png';
   static String googlelogo='assets/googlelogo.png';
+  static String email='assets/email.png';
+  static String logo='assets/logo.png';
+  static String pass='assets/passicon.png';
+
+  static String calendericon='assets/calendericon.png;';
 
 }

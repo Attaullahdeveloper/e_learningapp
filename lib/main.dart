@@ -1,4 +1,7 @@
 import 'package:e_learningapp/Controllers/Widgets/Buttons/Getstartbutton.dart';
+import 'package:e_learningapp/Views/Auth_Views/Profile_screen.dart';
+import 'package:e_learningapp/Views/Auth_Views/Signin_screen.dart';
+import 'package:e_learningapp/Views/Auth_Views/Signup_screen.dart';
 import 'package:e_learningapp/Views/starting_screens/Onboarding_screen.dart';
 import 'package:e_learningapp/Views/starting_screens/Splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:SigninenterScreen(),
+      home:ProfileScreen(),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:e_learningapp/Controllers/Appassets/Appicons.dart';
 import 'package:e_learningapp/Controllers/Appassets/Appimages.dart';
+import 'package:e_learningapp/Controllers/Widgets/Buttons/Mainbutton.dart';
 import 'package:e_learningapp/Controllers/Widgets/Text2_widget.dart';
+import 'package:e_learningapp/Controllers/Widgets/Textfield_widget.dart';
 import 'package:e_learningapp/Controllers/constants/Appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,7 +17,11 @@ class SigninenterScreen extends StatelessWidget {
       backgroundColor: Appcolors.backgroundcolor,
       body: Column(
         children: [
-          SizedBox(height: 80,),
+          SizedBox(height: 370,),
+      //   Padding(padding: EdgeInsets.only(left: 30),
+      //   child:
+      // TextfieldWidget(hintText: 'Email',prefixIcon: Image.asset(Appimages.email),)),
+      //    Image.asset(Appimages.email)
           Align(
             alignment: Alignment.center,
               child: Text1w(text: "Let's you in ", fontsize: 20, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,)),
@@ -79,10 +85,29 @@ class SigninenterScreen extends StatelessWidget {
                   child: Text2w(text: 'Continue with Apple', fontsize: 14, color: Appcolors.subtextcolor,fontWeight: FontWeight.w800,))
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Text2w(text: '( Or )', fontsize:12, color: Appcolors.blackcolor,fontWeight: FontWeight.w800,),
+          SizedBox(height: 70,),
+          Text2w(text: '( Or )', fontsize:12, color: Appcolors.blackcolor,fontWeight: FontWeight.w800,),
+         SizedBox(height: 20,),
+          Mainbutton(text: 'Sign in with Your Account'),
+          SizedBox(height: 30,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text2w(text: "Don't have an Account?", fontsize: 12, color: Appcolors.subtextcolor,fontWeight: FontWeight.w700,),
+             TextButton(onPressed: (){},
+               style: TextButton.styleFrom(
+                 padding: EdgeInsets.zero,
+                 minimumSize:Size (0,0),
+                 tapTargetSize: MaterialTapTargetSize.shrinkWrap, // 👈 removes extra hit area
+
+               ), child:  Text2w(text: "SiGN UP", fontsize: 12, color: Appcolors.bluemain,fontWeight: FontWeight.w700,
+               decoration:TextDecoration.underline,
+               decorationColor: Appcolors.bluemain,
+               decorationthickness: 3,
+               ),)
+            ],
           )
+
         ],
       ),
     );

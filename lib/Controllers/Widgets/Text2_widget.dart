@@ -5,11 +5,19 @@ class Text2w extends StatelessWidget {
   double fontsize;
   final FontWeight fontWeight;
   final Color color;
+  final TextDecoration? decoration;
+  final Color? decorationColor;
+  final double? decorationthickness;
+  final double? height;
   Text2w({super.key,
     required this.text,
     required this.fontsize ,
     this.fontWeight = FontWeight.normal,
-    required this.color });
+    required this.color,
+  this.decoration,
+  this.decorationColor,
+  this.decorationthickness,
+  this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +27,10 @@ class Text2w extends StatelessWidget {
         fontWeight: fontWeight,
         fontSize: fontsize,
         color: color,
+        decoration: decoration,
+        decorationColor: decorationColor,
+        decorationThickness: decorationthickness,
+        height: height,
 
       ),
     );

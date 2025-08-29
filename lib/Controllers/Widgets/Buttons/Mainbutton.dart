@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import '../Text1w.dart';
 class Mainbutton extends StatelessWidget {
   final String text;
-  const Mainbutton({super.key,required this.text});
+  final EdgeInsetsGeometry? textPadding; // ✅ new paramete
+  const Mainbutton({super.key,required this.text,this.textPadding});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 48 ,
-      width: 350,
+      height: 52 ,
+      width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: Appcolors.bluemain,
@@ -26,14 +27,16 @@ class Mainbutton extends StatelessWidget {
 
       ),
       child: Row(
-        //  mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(width: 25,),
-          Text1w(text: text, fontsize: 14, color: Appcolors.whitecolor,fontWeight: FontWeight.bold,),
+          Padding(
+            padding: textPadding ?? const EdgeInsets.only(left: 25),
+            child: Text1w(text: text, fontsize: 16, color: Appcolors.whitecolor,fontWeight: FontWeight.bold,),
+          ),
           Spacer(),
           Container(
-            height: 38,
-            width: 38,
+            height: 40,
+            width: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: Appcolors.whitecolor,),
@@ -41,7 +44,7 @@ class Mainbutton extends StatelessWidget {
               child: Icon(Icons.arrow_forward,color: Appcolors.bluemain,),
             ),
           ),
-          SizedBox(width: 7,),
+          SizedBox(width: 9,),
         ],
       ),
     );
