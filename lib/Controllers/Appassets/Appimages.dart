@@ -18,6 +18,10 @@ class Appimages{
   static String email='assets/email.png';
   static String logo='assets/logo.png';
   static String pass='assets/passicon.png';
+  static String sucess='assets/successlogo.png';
+  static String forgot='assets/forglogo.png';
+  static String lood='assets/lood.png';
+
 
   static String calendericon='assets/calendericon.png;';
 

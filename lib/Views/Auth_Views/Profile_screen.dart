@@ -1,10 +1,16 @@
+import 'dart:async';
+
 import 'package:e_learningapp/Controllers/Appassets/Appicons.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/Mainbutton.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/datatextfield.dart';
 import 'package:e_learningapp/Controllers/Widgets/Genderselection.dart';
 import 'package:e_learningapp/Controllers/Widgets/Phonetextdiled.dart';
 import 'package:e_learningapp/Controllers/Widgets/Text1w.dart';
+import 'package:e_learningapp/Controllers/Widgets/Text2_widget.dart';
+import 'package:e_learningapp/Views/Auth_Views/forgotpass_screens/Forgot1_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../Controllers/Appassets/Appimages.dart';
 import '../../Controllers/Widgets/Textfield_widget.dart';
@@ -68,7 +74,45 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height:40,),
             InkWell(
                 onTap: (){
-                  
+                  // dialogue box----------------------------------
+                  Get.dialog(
+                   // barrierDismissible: false,
+                    barrierColor: Colors.black.withOpacity(0.6),
+
+                    AlertDialog(
+                      backgroundColor: Colors.white,
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(Appimages.sucesslogo),
+                          SizedBox(height: 20,),
+                          Text1w(text: 'Congratulation', fontsize: 20, color: Appcolors.blackcolor,fontWeight: FontWeight.w600,),
+                          SizedBox(height: 20,),
+                          Text2w(text: 'Your Account is Ready to Use.You will\n'
+                              '    redirected to Home Page in a Few \n        '
+                              '                   Seconds', fontsize: 12, color: Appcolors.subtextcolor,fontWeight: FontWeight.w700,),
+                          SizedBox(height: 10,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: CircularProgressIndicator(
+                              strokeWidth: 3, // 👈 thinner line
+                              valueColor: AlwaysStoppedAnimation<Color>(Appcolors.maintextcolor), // 👈 custom color
+                              backgroundColor: Colors.grey.shade200, // 👈 faint background ring
+                            ),
+                          )
+
+
+                        ],
+                      ),
+                    )
+                  );
+                  // auto navigation-------=============================================================
+                  // Timer(const Duration(seconds: 3), () {
+                  //   if (Get.isDialogOpen ?? false) {
+                  //     Get.back(); // close the dialog
+                  //     Get.to(Forgot1Screen()); // 👈 navigate to your screen
+                  //   }
+                  // });
                 },
                 child: Mainbutton(text: 'Continue',textPadding: EdgeInsets.only(left: 110),)),
 
