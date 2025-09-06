@@ -6,19 +6,13 @@ import '../constants/Appcolors.dart';
 class TextfieldWidget extends StatelessWidget {
   final String hintText;                       // required
   final TextEditingController? controller;
-  //final bool obscureText;
   final Widget? prefixIcon;                    // optional
   final Widget? suffixIcon;        // 👈 required
-
    TextfieldWidget({super.key,
-
      required this.hintText,
      this.controller,
-   //  this.obscureText = false,
      this.prefixIcon,
-     this.suffixIcon,
-
-   });
+     this.suffixIcon,});
 
   @override
   Widget build(BuildContext context) {

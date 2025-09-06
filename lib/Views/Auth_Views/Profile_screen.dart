@@ -1,6 +1,7 @@
 import 'package:e_learningapp/Controllers/Appassets/Appicons.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/Mainbutton.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/datatextfield.dart';
+import 'package:e_learningapp/Controllers/Widgets/Genderselection.dart';
 import 'package:e_learningapp/Controllers/Widgets/Phonetextdiled.dart';
 import 'package:e_learningapp/Controllers/Widgets/Text1w.dart';
 import 'package:flutter/material.dart';
@@ -52,12 +53,24 @@ class ProfileScreen extends StatelessWidget {
               child: TextfieldWidget(hintText: 'Email',prefixIcon: Image.asset(Appimages.email),),
             ),
             SizedBox(height: 20,),
+            // phone number field
             Align(
               alignment: Alignment.center,
               child: PhoneTextField(),
             ),
-            SizedBox(height: 100,),
-            Mainbutton(text: 'Continue',textPadding: EdgeInsets.only(left: 110),),
+            // gender field--------
+            SizedBox(height: 20,),
+            Align(
+              alignment: Alignment.center,
+              child: Genderselection(),
+            ),
+
+            SizedBox(height:40,),
+            InkWell(
+                onTap: (){
+                  
+                },
+                child: Mainbutton(text: 'Continue',textPadding: EdgeInsets.only(left: 110),)),
 
           ],
         ),
