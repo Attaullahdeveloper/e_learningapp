@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:e_learningapp/Controllers/Appassets/Appicons.dart';
+import 'package:e_learningapp/Controllers/Screen_Controllers/Maincontroller.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/Mainbutton.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/datatextfield.dart';
 import 'package:e_learningapp/Controllers/Widgets/Genderselection.dart';
@@ -16,7 +17,8 @@ import '../../Controllers/Appassets/Appimages.dart';
 import '../../Controllers/Widgets/Textfield_widget.dart';
 import '../../Controllers/constants/Appcolors.dart';
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+   ProfileScreen({super.key});
+  Maincontroller maincontroller=Get.put(Maincontroller());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: 20,),
             Align(
                 alignment: Alignment.center,
                 child: Image.asset(Appimages.proflogo,height: 100,width: 100,)),
@@ -94,11 +96,12 @@ class ProfileScreen extends StatelessWidget {
                           SizedBox(height: 10,),
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
-                            child: CircularProgressIndicator(
-                              strokeWidth: 3, // 👈 thinner line
-                              valueColor: AlwaysStoppedAnimation<Color>(Appcolors.maintextcolor), // 👈 custom color
-                              backgroundColor: Colors.grey.shade200, // 👈 faint background ring
-                            ),
+                            child:
+                           Obx(()=> maincontroller.isLoading.value?CircularProgressIndicator(
+                             strokeWidth: 3, //  thinner line
+                             valueColor: AlwaysStoppedAnimation<Color>(Appcolors.maintextcolor), //  custom color
+                             backgroundColor: Colors.grey.shade200, //  faint background ring
+                           ):SizedBox(),)
                           )
 
 
@@ -106,13 +109,19 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     )
                   );
+                  // stop the loader after 2 seconds (dialog stays)
+                  Timer(const Duration(seconds: 2), () {
+                    maincontroller.isLoading.value = false;
+                  });
                   // auto navigation-------=============================================================
-                  // Timer(const Duration(seconds: 3), () {
-                  //   if (Get.isDialogOpen ?? false) {
-                  //     Get.back(); // close the dialog
-                  //     Get.to(Forgot1Screen()); // 👈 navigate to your screen
-                  //   }
-                  // });
+                  Timer(const Duration(seconds: 3), () {
+                    maincontroller.isLoading.value=false;
+                    if (Get.isDialogOpen ?? false) {
+                      Get.back(); // close the dialog
+
+                      Get.to(Forgot1Screen()); //  navigate to your screen
+                    }
+                  });
                 },
                 child: Mainbutton(text: 'Continue',textPadding: EdgeInsets.only(left: 110),)),
 

@@ -17,7 +17,7 @@ Splashcontroller splashcontroller=Get.put(Splashcontroller());
         children: [
          Align(
              alignment: Alignment.center,
-             child: Image.asset(Appimages.splashlogo,height: 120,width: 120,)),
+             child: Image.asset(Appimages.logo,height: 120,width: 120,)),
           Align(
               alignment: Alignment.center,
               child: Image.asset(Appimages.oval,height: 310,width: 310,)),

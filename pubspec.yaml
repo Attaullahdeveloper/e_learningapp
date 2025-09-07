@@ -38,6 +38,7 @@ dependencies:
   get: ^4.7.2
   font_awesome_flutter: ^10.9.1
   intl_phone_field: ^3.2.0
+  animated_text_kit: 4.2.1
 
 dev_dependencies:
   flutter_test:

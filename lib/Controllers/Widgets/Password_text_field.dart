@@ -9,7 +9,7 @@ TextEditingController passController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 60,
       width: 320,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -44,7 +44,10 @@ TextEditingController passController=TextEditingController();
               minWidth: 35, // default is 48 → reducing brings text closer
               minHeight: 35,
             ),
-            suffixIcon: Icon(Icons.visibility_off),
+            suffixIcon: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Icon(Icons.visibility_off_outlined),
+            ),
             contentPadding: EdgeInsets.only(top: 20)
 
 

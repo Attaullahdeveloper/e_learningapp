@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:e_learningapp/Controllers/Screen_Controllers/Maincontroller.dart';
 import 'package:e_learningapp/Controllers/Widgets/Buttons/nextbutton.dart';
 import 'package:e_learningapp/Controllers/Widgets/Text1w.dart';
@@ -5,6 +6,7 @@ import 'package:e_learningapp/Controllers/Widgets/Text2_widget.dart';
 import 'package:e_learningapp/Controllers/constants/Appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../Controllers/Widgets/Buttons/Getstartbutton.dart';
 class OnboardingScreen extends StatelessWidget {
@@ -91,6 +93,7 @@ Maincontroller maincontroller=Get.put(Maincontroller());
               Column(
                 children: [
                   SizedBox(height: 460,),
+
                   Text1w(text: 'Online Learning', fontsize: 20, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,),
                   SizedBox(height: 5,),
                   Text2w(text: 'We Provide Online Classes and Pre Recorded\n'
@@ -123,7 +126,31 @@ Maincontroller maincontroller=Get.put(Maincontroller());
 
           Padding(
             padding: const EdgeInsets.only(left: 280,top: 70),
-            child: TextButton(onPressed: (){}, child: Text1w(text: 'Skip', fontsize: 14, color: Appcolors.maintextcolor,fontWeight: FontWeight.w600,),),
+            child: TextButton(onPressed: (){}, child:
+            AnimatedTextKit(
+              repeatForever: true,
+              animatedTexts: [
+                ColorizeAnimatedText(
+                  'Skip',
+                  textStyle: GoogleFonts.jost(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  colors: [
+                    Appcolors.blackcolor, // Primary Blue
+                    Color(0xFF00C853), // Fresh Green
+                    Color(0xFFFFC107), // Amber / Yellow
+                    Color(0xFF9C27B0), // Purple
+                    Color(0xFFFF5722), // Deep Orange
+                    Color(0xFF00BCD4), // Cyan
+                    Color(0xFFE91E63), // Pink Accent
+                    Color(0xFF4CAF50), // Classic Green
+                    Color(0xFF673AB7), // Deep Indigo
+                  ],
+                  speed: const Duration(milliseconds: 500),
+                ),
+              ],
+            ),),
           ),
         ],
       )

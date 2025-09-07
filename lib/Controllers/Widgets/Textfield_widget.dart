@@ -18,7 +18,7 @@ class TextfieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       Container(
-      height: 55,
+      height: 60,
       width: 320,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),

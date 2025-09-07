@@ -2,12 +2,14 @@ import 'package:e_learningapp/Controllers/Widgets/Buttons/Getstartbutton.dart';
 import 'package:e_learningapp/Views/Auth_Views/Profile_screen.dart';
 import 'package:e_learningapp/Views/Auth_Views/Signin_screen.dart';
 import 'package:e_learningapp/Views/Auth_Views/Signup_screen.dart';
+import 'package:e_learningapp/Views/Auth_Views/forgotpass_screens/Forgot_2_screen.dart';
 import 'package:e_learningapp/Views/starting_screens/Onboarding_screen.dart';
 import 'package:e_learningapp/Views/starting_screens/Splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'Views/Auth_Views/Signinenter_screen.dart';
+import 'Views/Auth_Views/forgotpass_screens/Forgot1_screen.dart';
 import 'Views/textscreen.dart';
 import 'p.dart';
 
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:ProfileScreen(),
+      home:SplashScreenp(),
     );
   }
 }

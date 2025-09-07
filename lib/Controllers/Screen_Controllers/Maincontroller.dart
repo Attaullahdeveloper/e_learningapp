@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class Maincontroller extends GetxController {
   final pageController=PageController();
   final currentindex=0.obs;
+  var isLoading=true.obs;
   final totalpages=3;
   void nextPage() {
     if (currentindex.value < totalpages - 1) {
